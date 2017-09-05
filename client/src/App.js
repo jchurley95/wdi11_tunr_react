@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Link, Route } from 'react-router-dom';
+import AllArtists from './components/AllArtists';
+import Artist from './components/Artist';
+import SignUp from './components/SignUp';
+import GlobalNav from './components/GlobalNav.js';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <Router>
+        <div>
+          <GlobalNav />
+          <Route exact path="/" component={AllArtists}/>
+          <Route exact path="/signup" component={SignUp}/>
+          <Route path="/artist/:id" component={Artist}/>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </Router>
     );
   }
 }

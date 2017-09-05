@@ -12,5 +12,4 @@ class Api::SongsController < ApplicationController
 
     render json: @song
   end
-
 end
