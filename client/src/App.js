@@ -4,8 +4,12 @@ import AllArtists from './components/AllArtists';
 import Artist from './components/Artist';
 import SignUp from './components/SignUp';
 import GlobalNav from './components/GlobalNav.js';
+import { setAxiosDefaults } from './util';
 
 class App extends Component {
+  componentWillMount(){
+    setAxiosDefaults()
+  }
   render() {
     return (
       <Router>

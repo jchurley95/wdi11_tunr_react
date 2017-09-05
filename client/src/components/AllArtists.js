@@ -36,6 +36,9 @@ class AllArtists extends Component{
   }
 
   render(){
+    if (this.state.error){
+      return <h1>NOT A VALID USER</h1>
+    }
     return (
       <ArtistListStyles>
         {this.state.artists.map((artist) => (
