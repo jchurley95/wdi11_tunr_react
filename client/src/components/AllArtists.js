@@ -57,7 +57,7 @@ class AllArtists extends Component{
             <ArtistCard key={artist.id} artist={artist} />
           ))}
         </ArtistListStyles>
-        <Link to="/artist/new">Create A New Artist</Link>
+        <Link to="/artist/new" createArtist={this._createArtist}>Create A New Artist</Link>
       </div>
     )
   }
