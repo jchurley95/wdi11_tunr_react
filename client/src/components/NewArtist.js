@@ -13,7 +13,7 @@ class NewArtist extends Component {
     }
     _handleSubmit = (e) => {
         e.preventDefault()
-        this.props.addArtist(this.state.newArtist)
+        this.props.createArtist(this.state.newArtist)
     }
     _handleChange = (e) => {
         const attributeValue = e.target.value
@@ -32,7 +32,7 @@ class NewArtist extends Component {
                     <input type="text" name="nationality" placeholder="Nationality" onChange={this._handleChange}/>
                 <label>Artist Banner Photo URL:</label>
                     <input type="text" name="photo_url" placeholder="Artist Banner Photo URL" onChange={this._handleChange}/>
-                <input type="submit" value="Add Artist"/>
+                <input type="submit" value="Create Artist"/>
             </form>
         )
     }

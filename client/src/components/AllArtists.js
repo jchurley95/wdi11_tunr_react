@@ -37,6 +37,15 @@ class AllArtists extends Component{
     }
   }
 
+  _createArtist = async (payload) => {
+    const res = await axios.post('/api/artists', payload);
+    const newArtist = res.data
+    const newState = {...this.state}
+    newState.artists.push(newArtist)
+    newState.newArtist = false // still don't get this one
+    this.setState(payload)
+  }
+
   render(){
     if (this.state.error){
       return <h1>{this.state.error.message}</h1>
