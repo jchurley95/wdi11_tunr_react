@@ -6,6 +6,7 @@ import SignUp from './components/SignUp';
 import SignIn from './components/SignIn';
 import GlobalNav from './components/GlobalNav.js';
 import { setAxiosDefaults } from './util';
+import NewArtist from './components/NewArtist.js';
 
 class App extends Component {
   componentWillMount(){
@@ -20,6 +21,8 @@ class App extends Component {
           <Route exact path="/signup" component={SignUp}/>
           <Route exact path="/signin" component={SignIn}/>
           <Route path="/artist/:id" component={Artist}/>
+          <Route path="/artist/new" component={Artist}/>
+
         </div>
       </Router>
     );
