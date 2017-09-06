@@ -3,6 +3,7 @@ import axios from 'axios';
 import ArtistCard from './ArtistCard';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
+import NewArtist from './NewArtist';
 
 
 const ArtistListStyles = styled.div`
@@ -38,6 +39,7 @@ class AllArtists extends Component{
   }
 
   _createArtist = async (payload) => {
+    console.log(payload);
     const res = await axios.post('/api/artists', payload);
     const newArtist = res.data
     const newState = {...this.state}
@@ -52,12 +54,14 @@ class AllArtists extends Component{
     }
     return (
       <div>
+        <br />
+        <div><NewArtist createArtist={this._createArtist}/></div>
+        <hr />
         <ArtistListStyles>
           {this.state.artists.map((artist) => (
             <ArtistCard key={artist.id} artist={artist} />
           ))}
         </ArtistListStyles>
-        <Link to="/artist/new" createArtist={this._createArtist}>Create A New Artist</Link>
       </div>
     )
   }
